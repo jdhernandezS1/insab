@@ -1,7 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using momi.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<MyDbContext>(op =>
+  op.UseSqlServer(builder.Configuration.GetConnectionString("DbConnection")));
+
 
 var app = builder.Build();
 
