@@ -1,0 +1,39 @@
+﻿@model DtoFattoriale
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+  
+    ViewData["Title"] = "Calcolo fattoriale";
+
+
+    
+}
+
+<h2>Calcolo del fattoriale</h2>
+
+<form asp-controller="Demo2" asp-action="Esercizio5" >
+  <input type="text" name="Input1" id="Input1" value="1" />
+  <br />
+  @* <input type="text" name="Valore" id="Valore" value="@Model.Valore" />
+ *@
+ <input asp-for="Valore" />
+  <br />
+  <input asp-for="Nascita" />
+  <br />
+  <input type="submit" name="bCalcola"  value="Calcola" />
+
+</form>
+
+
+@Model.Valore ! = @Model.DettaglioCalcolo = @Model.Risultato
+
+
+
+@* @{
+  int a = 1;
+  int b = 5;
+ // int c = a + b;
+}
+ a + b = @a + @b = @(a+b) *@
